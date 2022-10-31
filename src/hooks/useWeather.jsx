@@ -14,9 +14,9 @@ const useWeather = () => {
         .then(res => setWeather(res.data));
     };
 
-    const options = {
-      enableHighAccuracy: true,
-      timeout: 5000,
+    const options = () => {
+      enableHighAccuracy: true;
+      timeout: 5000;
       maximumAge: 0
     };
 
