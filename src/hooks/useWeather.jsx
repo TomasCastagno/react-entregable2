@@ -14,9 +14,15 @@ const useWeather = () => {
         .then(res => setWeather(res.data));
     };
 
-    navigator.geolocation.getCurrentPosition(success);
+    const options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
 
-    
+    navigator.geolocation.getCurrentPosition(success, options);
+
+
   }, []);
 
   return { weather }
